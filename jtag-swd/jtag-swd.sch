@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:jtag-swd-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -112,4 +113,7 @@ Wire Wire Line
 	5450 4050 6250 4050
 Wire Wire Line
 	6000 4150 6250 4150
+Wire Wire Line
+	4550 4250 4650 4250
+Connection ~ 4650 4250
 $EndSCHEMATC
