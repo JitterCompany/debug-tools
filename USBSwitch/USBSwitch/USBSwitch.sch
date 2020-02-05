@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-EELAYER 26 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -394,4 +394,48 @@ Text Label 4000 3500 0    39   ~ 0
 D+
 Text Label 4000 3600 0    39   ~ 0
 D-
+$Comp
+L Mechanical:MountingHole_Pad H3
+U 1 1 5E1B7C17
+P 3050 6100
+F 0 "H3" H 3150 6151 50  0000 L CNN
+F 1 "MountingHole_Pad" H 3150 6060 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2_Pad_Via" H 3050 6100 50  0001 C CNN
+F 3 "~" H 3050 6100 50  0001 C CNN
+	1    3050 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR017
+U 1 1 5E1B7C1D
+P 3050 6200
+F 0 "#PWR017" H 3050 5950 50  0001 C CNN
+F 1 "GND" H 3055 6027 50  0000 C CNN
+F 2 "" H 3050 6200 50  0001 C CNN
+F 3 "" H 3050 6200 50  0001 C CNN
+	1    3050 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H4
+U 1 1 5E1B8470
+P 4050 6100
+F 0 "H4" H 4150 6151 50  0000 L CNN
+F 1 "MountingHole_Pad" H 4150 6060 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2_Pad_Via" H 4050 6100 50  0001 C CNN
+F 3 "~" H 4050 6100 50  0001 C CNN
+	1    4050 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR018
+U 1 1 5E1B8476
+P 4050 6200
+F 0 "#PWR018" H 4050 5950 50  0001 C CNN
+F 1 "GND" H 4055 6027 50  0000 C CNN
+F 2 "" H 4050 6200 50  0001 C CNN
+F 3 "" H 4050 6200 50  0001 C CNN
+	1    4050 6200
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
