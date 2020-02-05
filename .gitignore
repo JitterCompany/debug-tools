@@ -27,5 +27,3 @@ _autosave-*
 
 # unwanted OS stuff
 .DS_Store
-
-*.zip

@@ -5,7 +5,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date ""
+Date "2020-02-05"
 Rev ""
 Comp ""
 Comment1 ""
@@ -382,7 +382,7 @@ L power:+5V #PWR011
 U 1 1 5C29D883
 P 5950 5150
 F 0 "#PWR011" H 5950 5000 50  0001 C CNN
-F 1 "+5V" H 5800 5250 50  0000 C CNN
+F 1 "+5V" H 5900 5300 50  0000 C CNN
 F 2 "" H 5950 5150 50  0001 C CNN
 F 3 "" H 5950 5150 50  0001 C CNN
 	1    5950 5150
@@ -391,9 +391,7 @@ $EndComp
 Text Notes 5650 4750 0    79   ~ 0
 Optional LED power indicators
 Text Label 4000 3500 0    39   ~ 0
-D+
-Text Label 4000 3600 0    39   ~ 0
-D-
+HOST_D+
 $Comp
 L Mechanical:MountingHole_Pad H3
 U 1 1 5E1B7C17
@@ -438,4 +436,10 @@ F 3 "" H 4050 6200 50  0001 C CNN
 	1    4050 6200
 	1    0    0    -1  
 $EndComp
+Text Label 4000 3600 0    39   ~ 0
+HOST_D-
+Text Label 5850 3600 0    39   ~ 0
+DEVICE_D-
+Text Label 5850 3500 0    39   ~ 0
+DEVICE_D+
 $EndSCHEMATC
