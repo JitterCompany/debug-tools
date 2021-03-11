@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name SKEDD-converterboard-rescue)(type Legacy)(uri ${KIPRJMOD}/SKEDD-converterboard-rescue.lib)(options "")(descr ""))
+)
