@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:jtag-swd-cache
-EELAYER 26 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -22,6 +21,8 @@ F 0 "J1" H 4210 3696 50  0000 R CNN
 F 1 "Conn_ARM_JTAG_SWD_10" H 4210 3605 50  0000 R CNN
 F 2 "Jitter_Footprints:PinSocket_2x05_P1.27mm_Vertical_Mirrored_Y" H 4700 3100 50  0001 L TNN
 F 3 "http://infocenter.arm.com/help/topic/com.arm.doc.faqs/attached/13634/cortex_debug_connectors.pdf" V 4300 2400 50  0001 C CNN
+F 4 "SFMC-105-01-L-D" H 4650 3650 50  0001 C CNN "MPN"
+F 5 "Samtec" H 4650 3650 50  0001 C CNN "Manufacturer"
 	1    4650 3650
 	1    0    0    -1  
 $EndComp
@@ -116,4 +117,29 @@ Wire Wire Line
 Wire Wire Line
 	4550 4250 4650 4250
 Connection ~ 4650 4250
+NoConn ~ 5150 3850
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 61BCA8CA
+P 4650 2950
+F 0 "#FLG0101" H 4650 3025 50  0001 C CNN
+F 1 "PWR_FLAG" H 4650 3123 50  0000 C CNN
+F 2 "" H 4650 2950 50  0001 C CNN
+F 3 "~" H 4650 2950 50  0001 C CNN
+	1    4650 2950
+	1    0    0    -1  
+$EndComp
+Connection ~ 4650 2950
+$Comp
+L power:PWR_FLAG #FLG0102
+U 1 1 61BCAC7B
+P 4550 4250
+F 0 "#FLG0102" H 4550 4325 50  0001 C CNN
+F 1 "PWR_FLAG" V 4550 4377 50  0000 L CNN
+F 2 "" H 4550 4250 50  0001 C CNN
+F 3 "~" H 4550 4250 50  0001 C CNN
+	1    4550 4250
+	0    -1   -1   0   
+$EndComp
+Connection ~ 4550 4250
 $EndSCHEMATC
