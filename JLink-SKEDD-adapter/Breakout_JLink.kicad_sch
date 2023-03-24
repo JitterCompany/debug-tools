@@ -360,7 +360,7 @@
       (property "Value" "Jitter_Debug_HostSide" (id 1) (at 19.05 24.13 0)
         (effects (font (size 1.27 1.27)))
       )
-      (property "Footprint" "Jitter_Footprints:WR-WST_REDFIT-6-pins_490107670612" (id 2) (at 6.35 24.13 0)
+      (property "Footprint" "Jitter_Footprints:WR-WST_REDFIT-6-pins_490107670612-adapter_to_pcb" (id 2) (at 6.35 24.13 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (property "Datasheet" "https://www.we-online.de/katalog/datasheet/490107670612.pdf" (id 3) (at 6.35 24.13 0)
@@ -717,7 +717,6 @@
     )
   )
 
-
   (junction (at 147.32 83.82) (diameter 0) (color 0 0 0 0)
     (uuid 4d62fd3c-5981-4617-943b-720b112143ec)
   )
@@ -1010,7 +1009,7 @@
     (property "Value" "Jitter_Debug_HostSide" (id 1) (at 145.415 124.8922 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Jitter_Footprints:WR-WST_REDFIT-6-pins_490107670612" (id 2) (at 149.86 110.49 0)
+    (property "Footprint" "Jitter_Footprints:WR-WST_REDFIT-6-pins_490107670612-adapter_to_pcb" (id 2) (at 149.86 110.49 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "https://www.we-online.de/katalog/datasheet/490107670612.pdf" (id 3) (at 149.86 110.49 0)
@@ -1312,7 +1311,7 @@
       (reference "J2") (unit 1) (value "Conn_02x10_Odd_Even") (footprint "Jitter_Connectors:JLink_PinHeader_2x10_2.54_Horizontal")
     )
     (path "/06f35d79-701d-4668-99e8-c39281eb6d67"
-      (reference "J3") (unit 1) (value "Jitter_Debug_HostSide") (footprint "Jitter_Footprints:WR-WST_REDFIT-6-pins_490107670612")
+      (reference "J3") (unit 1) (value "Jitter_Debug_HostSide") (footprint "Jitter_Footprints:WR-WST_REDFIT-6-pins_490107670612-adapter_to_pcb")
     )
     (path "/baa5bd86-b184-4ca9-a98a-4eaeb1dcc77e"
       (reference "J4") (unit 1) (value "Conn_01x06_Female") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
