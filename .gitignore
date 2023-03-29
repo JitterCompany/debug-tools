@@ -17,6 +17,9 @@ _autosave-*
 *.bak-*
 fp-info-cache
 
+# Kicad local files
+*.kicad_prl
+
 # Netlist files (exported from Eeschema)
 *.net
 
