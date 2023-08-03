@@ -16,6 +16,7 @@ _autosave-*
 *-save.kicad_pcb
 *.bak-*
 fp-info-cache
+~*.lck
 
 # Kicad local files
 *.kicad_prl
