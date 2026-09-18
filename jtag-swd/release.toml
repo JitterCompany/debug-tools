@@ -1,0 +1,37 @@
+# Fabrication INTENT for this board. Everything KiCad already knows -- layer count,
+# stackup, board size, via tenting, SMD/THT placement -- is read from the design, not
+# repeated here. See tools/pcb_release/docs/release-toml.md
+#
+# A simple 2-layer adapter: no impedance control, no special layers, no constraints
+# beyond "a standard board, lead-free". Values left as "any" are deliberate -- they
+# let the fab use whatever is cheapest rather than pinning a preference nobody has.
+
+[board]
+name = "jtag-swd"
+date = "skip"              # legacy board: keep the date already in the title block
+
+[assembly]
+sides = "auto"
+
+[stencil]
+force = ""
+
+[stackup]
+spec = "standard"          # standard 2-layer at 1.6 mm, no impedance control
+impedance_note = ""
+
+[fab]
+surface_finish    = "any"          # any lead-free
+soldermask_color  = "any"
+silkscreen_color  = "any"
+via_treatment     = "tented both sides"
+special_layers    = []
+flex              = "none"
+notes             = ""
+
+[requirements]
+rohs    = true
+ul94_v0 = true
+
+[bom]
+readable_footprints = true
