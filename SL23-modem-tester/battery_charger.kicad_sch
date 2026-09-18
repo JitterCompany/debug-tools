@@ -5159,19 +5159,6 @@
 		)
 		(uuid "2a3ad31f-9285-42cb-ba6a-39e40f7075ef")
 	)
-	(text "Button and filter is placed on seperate board! \nIs connected through a header, see page 13."
-		(exclude_from_sim no)
-		(at 102.87 175.26 0)
-		(effects
-			(font
-				(size 1.905 1.905)
-				(italic yes)
-			)
-			(justify left bottom)
-			(href "#13")
-		)
-		(uuid "3edf9a09-3742-4e2b-b51d-02556273f25f")
-	)
 	(text "T1=-5°C and T5=60°C\n\nSee section 8.3.9.5 in datasheet for resistor calculations.\nthermistor in accupack: NTCS0603E3103JHT\n- Rcold @ -5±1.5 °C = 42.9k\n- Rhot @ 60±1.8 °C = 2.49k"
 		(exclude_from_sim no)
 		(at 196.85 153.67 0)
