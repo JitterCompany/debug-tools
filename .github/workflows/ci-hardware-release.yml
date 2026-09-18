@@ -1,0 +1,37 @@
+# Builds the manufacturing package: the fab zip (production/, for the PCBA partner)
+# and the customer set (STEP, PDFs, renders, interactive BOM), uploaded as workflow
+# artifacts. NOT run on every push, only on an hw-v* tag or a manual "Run workflow".
+# One job and one artifact pair per board.
+#
+#   git tag hw-v1.0 && git push origin hw-v1.0
+#
+# A board can only be released once it has a release.toml (fab intent) -- every board
+# here has one. The first release of a board also produces release_spec.toml; commit
+# that, it is what the `drift` gate watches.
+#
+# The exemptions mirror ci-hardware.yml: a release runs the same gates, so a board
+# that is not green there could not be released at all. Keep the two lists in step.
+name: CI-hardware-release
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "hw-v*"
+
+concurrency:
+  group: ci-hardware-release-${{ github.ref }}
+  cancel-in-progress: false     # never cancel a release build midway
+
+jobs:
+  release:
+    uses: JitterCompany/pcb_release/.github/workflows/kicad-release.yml@master
+    with:
+      tools: tools/pcb_release            # the submodule, so its SHA pins the version
+      project-dirs: |
+        SL23-modem-tester
+        BMP-REDFit-adapter               skip=pinmap
+        HSprobe-REDFit-adapter           skip=pinmap
+        JLink-REDFit-adapter             skip=pinmap
+        JLink-to-TC2030-IDC__microchip   skip=pinmap
+        jtag-swd                         skip=pinmap

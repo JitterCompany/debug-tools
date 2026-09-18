@@ -1,0 +1,118 @@
+# Auto-generated pin map for U5 from SL23-modem-tester.kicad_sch
+# kicad-cli netlists (root + standalone sheet) — all connectivity from KiCad.
+# Regenerate: generate_pinmap.py SL23-modem-tester.kicad_sch --ref U5
+# Reserved peripherals ('!' = firmware-owned): SPI2, TIM5
+# Net names are MCU-SHEET-LOCAL labels (unique, MCU-side intent preserved).
+# Sections = name's first '_'-token, unless set in tools/pinmap-groups.txt.
+# '=> FUNC' is the ACTIVE alternate set in KiCad; 'cap:' lists other options.
+# Intent suffixes _IRQ/_A are STRIPPED from the name — their meaning is the
+# 'EXTIn *IRQ*' / ADC annotation. _n = active-low (KiCad ~{} overbar) is kept.
+
+[analog]
+temp = "pc0"  # pc0 | => ADC1_IN1
+vref_p = "vref+"  # vref+
+
+[battery]
+bat_bal = "pc3"  # pc3
+bat_ce_n = "pc6"  # pc6 | cap: TIM3_CH1/TIM8_CH1
+bat_int_n = "pa8"  # pa8 | cap: TIM1_CH1 | EXTI8 *IRQ*
+bat_scl = "pg7"  # pg7 | => I2C3_SCL
+bat_sda = "pg8"  # pg8 | => I2C3_SDA
+bat_stat = "pa10"  # pa10 | cap: TIM1_CH3
+
+[cellular]
+cellular_dtr = "pb15"  # pb15 | cap: TIM15_CH2/TIM1_CH3N/TIM8_CH3N
+cellular_pwr_en = "pg6"  # pg6
+cellular_reset_n = "pb12"  # pb12
+cellular_uart_cts = "pb13"  # pb13 | cap: TIM15_CH1N/TIM1_CH1N
+cellular_uart_rts = "pb14"  # pb14 | cap: TIM15_CH1/TIM1_CH2N/TIM8_CH2N
+cellular_uart_rx = "pb11"  # pb11 | => USART3_RX | cap: TIM2_CH4
+cellular_uart_tx = "pb10"  # pb10 | => USART3_TX | cap: TIM2_CH3
+
+[clock]
+hse_n = "ph1"  # ph1
+hse_p = "ph0"  # ph0
+lse_n = "pc15"  # pc15
+lse_p = "pc14"  # pc14
+
+[debug]
+boot0 = "ph3"  # ph3
+reset = "nrst"  # nrst
+swclk = "pa14"  # pa14
+swdio = "pa13"  # pa13
+uart_swd_rx = "pb7"  # pb7 | cap: TIM17_CH1N/TIM4_CH2
+uart_swd_tx = "pb6"  # pb6 | cap: TIM16_CH1N/TIM4_CH1
+
+[module]
+mod_io_1 = "pa2"  # pa2 | cap: TIM15_CH1/TIM2_CH3/TIM5_CH3!
+mod_io_10 = "pc1"  # pc1
+mod_io_11 = "pb4"  # pb4 | cap: TIM3_CH1
+mod_io_12 = "pb5"  # pb5 | cap: TIM3_CH2
+mod_io_13 = "pb8"  # pb8 | cap: TIM16_CH1/TIM4_CH3
+mod_io_14 = "pb9"  # pb9 | cap: TIM17_CH1/TIM4_CH4
+mod_io_15 = "pc2"  # pc2
+mod_io_16 = "pe6"  # pe6 | cap: TIM3_CH4
+mod_io_17 = "pe5"  # pe5 | cap: TIM3_CH3
+mod_io_18 = "pe4"  # pe4 | cap: TIM3_CH2
+mod_io_19 = "pe3"  # pe3 | cap: TIM3_CH1
+mod_io_2 = "pa1"  # pa1 | cap: TIM15_CH1N/TIM2_CH2/TIM5_CH2!
+mod_io_20 = "pe2"  # pe2
+mod_io_21 = "pf11"  # pf11
+mod_io_22 = "pb2"  # pb2
+mod_io_23 = "pb1"  # pb1 | cap: TIM1_CH3N/TIM3_CH4/TIM8_CH3N
+mod_io_3 = "pb3"  # pb3 | cap: TIM2_CH2
+mod_io_4 = "pa3"  # pa3 | cap: TIM15_CH2/TIM2_CH4/TIM5_CH4!
+mod_io_5 = "pf10"  # pf10 | cap: TIM15_CH2
+mod_io_6 = "pf8"  # pf8 | cap: TIM5_CH3!
+mod_io_7 = "pf9"  # pf9 | cap: TIM15_CH1/TIM5_CH4!
+mod_io_8 = "pf7"  # pf7 | cap: TIM5_CH2!
+mod_io_9 = "pf6"  # pf6 | cap: TIM5_CH1!
+
+[park]
+park_sram_cs = "pd7"  # pd7
+
+[power]
+5v5_disable_n = "pg14"  # pg14
+dcdc_ultrasonic = "pg15"  # pg15
+power_good_3v3 = "pd3"  # pd3
+power_good_5v5 = "pd6"  # pd6
+
+[storage]
+flash_clk = "pa5"  # pa5 | => SPI1_SCK | cap: TIM2_CH1/TIM8_CH1N
+flash_miso = "pa6"  # pa6 | => SPI1_MISO | cap: TIM16_CH1/TIM3_CH1
+flash_mosi = "pa7"  # pa7 | => SPI1_MOSI | cap: TIM17_CH1/TIM1_CH1N/TIM3_CH2/TIM8_CH1N
+flash_ss_n = "pb0"  # pb0 | cap: TIM1_CH2N/TIM3_CH3/TIM8_CH2N
+sd_clk = "pc12"  # pc12 | => SDMMC1_CK
+sd_cmd = "pd2"  # pd2 | => SDMMC1_CMD
+sd_dat0 = "pc8"  # pc8 | => SDMMC1_D0 | cap: TIM3_CH3/TIM8_CH3
+sd_dat1 = "pc9"  # pc9 | => SDMMC1_D1 | cap: TIM3_CH4/TIM8_CH4
+sd_dat2 = "pc10"  # pc10 | => SDMMC1_D2
+sd_dat3 = "pc11"  # pc11 | => SDMMC1_D3
+sd_det = "pg9"  # pg9 | cap: TIM15_CH1N
+sd_en = "pg10"  # pg10 | cap: TIM15_CH1
+
+[straps]
+hw_v0_1 = "pa4"  # pa4
+hw_v0_2 = "pa15"  # pa15 | cap: TIM2_CH1
+hw_v1 = "pg1"  # pg1
+
+[test]
+test_led_main_busy = "pf15"  # pf15
+test_led_main_fail = "pg0"  # pg0
+test_led_modem_fail = "pg11"  # pg11 | cap: TIM15_CH2
+test_led_modem_ok = "pg12"  # pg12
+test_led_sensor_fail = "pf14"  # pf14
+test_led_sensor_ok = "pf13"  # pf13
+
+[ui]
+ui_btn_bat_qon_n = "pc7"  # pc7 | cap: TIM3_CH2/TIM8_CH2 | EXTI7 *IRQ*
+ui_led_1 = "pd4"  # pd4
+ui_led_2 = "pd5"  # pd5
+
+[usb]
+mcu_usb_n = "pa11"  # pa11 | cap: TIM1_CH4
+mcu_usb_p = "pa12"  # pa12
+mcu_usb_vbus = "pa9"  # pa9 | cap: TIM1_CH2
+
+# power/ground:
+#  +3V3 x12, +BATT, AVCC, GND x13

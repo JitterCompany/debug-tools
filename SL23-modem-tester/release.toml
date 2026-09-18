@@ -1,0 +1,39 @@
+# PCB release config for the SL23-modem-tester board. Declares fabrication INTENT -- the
+# part KiCad cannot know. Everything KiCad does know (layer count, stackup, board
+# size, via tenting, SMD/THT placement) is extracted from the design, not repeated
+# here. Full reference: hardware/tools/pcb_release/docs/release-toml.md
+#
+# Values follow what the boards this jig was derived from have been ordered as:
+# 4-layer FR4, 1.6 mm, standard green, any lead-free finish, tented vias.
+
+[board]
+# name = "SL23-modem-tester"      # default: the KiCad project name
+
+[assembly]
+sides = "auto"             # auto | none | top | btm | both -- derived from placement
+
+[stencil]
+force = ""                 # "" = auto-derive from the SMD sides
+
+[stackup]
+spec = "standard"          # any standard 4-layer at 1.6 mm; no impedance control
+impedance_note = ""
+
+[fab]
+surface_finish    = "any"                  # any lead-free, as ordered before
+soldermask_color  = "green"
+silkscreen_color  = "white"
+via_treatment     = "tented both sides"    # cross-checked against KiCad tenting
+special_layers    = []
+flex              = "none"
+notes             = ""
+
+[requirements]
+rohs    = true
+ul94_v0 = true
+
+[customer]
+step_exclude_dnp = true
+
+[bom]
+readable_footprints = true

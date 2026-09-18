@@ -1,0 +1,68 @@
+# This config describes how pinmap.toml is generated.
+#
+# pinmap.toml is generated from the kicad schematic and lists all pins the
+# firmware should configure
+#
+# Regenerate:  tools/pcb.sh pinmap SL23-modem-tester   (then commit pinmap.toml)
+#
+# --- board notes (verified against this schematic and the factory-test firmware that
+#     runs on this jig) ----
+#
+# * HSE (Y1, 12 MHz) is DNP, firmware should not enable HSE
+# * USART3 must be configured with the peripheral's SWAP bit set.
+#   Schematic net name 'cellular_uart_rx' means 'rx from the cellular modems perpsective.
+# * FLASH_SS_N (PB0) is a software chip-select driven as GPIO (lib.rs:501), not
+
+ref = "U5"                 # the MCU designator: STM32L4R7ZITx, LQFP144
+out = "pinmap.toml"        # generated artifact, written beside this config
+ignore = []                # warning substrings downgraded error->notice. Keep SHORT
+                           # and each entry justified -- it is a suppression list.
+
+[reserved]
+# Peripherals the FIRMWARE owns INTERNALLY, with no pin of their own. A pin whose
+# ACTIVE alternate lands on one of these is flagged by CI; timer channels on them
+# are marked '!' in the generated map.
+#   "" = reserved for firmware, NO pin may use it
+#   "NET" = only that net may use it (its own I/O pin)
+#
+TIM5 = ""                  # RTIC monotonic (mono.rs:25) -- no pin. Marks the
+                           # TIM5_CHx capabilities on PF6-PF9 (MOD_IO_6..9) '!'
+SPI2 = ""                  # RTIC software-dispatcher vector (factory_test_debug_base.rs:118)
+
+[groups]
+# TOML-section grouping for the generated map. FIRST MATCH WINS, so order matters.
+# Keys are matched (case-insensitively, fnmatch) against the MCU-SHEET-LOCAL label
+# AFTER the _IRQ/_A intent suffix is stripped -- so the rule for TEMP_A is "TEMP".
+# Default grouping is the label's first '_'-token, which otherwise scatters these
+# across [5v5], [boot0], [swclk], [swdio], [hse], [lse], [mcu], [uart] and [vref].
+#   NAME = "group"      exact net name
+#   "PREFIX*" = "group" fnmatch glob: * ? [..]
+
+SWDIO = "debug"            # debug / programming interface
+SWCLK = "debug"
+BOOT0 = "debug"
+RESET = "debug"            # exact: CELLULAR_RESET_N must NOT match
+"UART_SWD_*" = "debug"     # GPIO today (RTT logging) -- see board notes
+
+"HSE_*" = "clock"          # HSE is DNP and unused -- see board notes
+"LSE_*" = "clock"
+
+"SD_*" = "storage"
+"FLASH_*" = "storage"
+
+"BAT_*" = "battery"
+"CELLULAR_*" = "cellular"
+"MCU_USB_*" = "usb"
+
+"TEST_LED_*" = "test"
+
+"POWER_GOOD_*" = "power"
+"5V5_*" = "power"
+"DCDC_*" = "power"
+
+TEMP = "analog"            # label is TEMP_A; the _A is stripped before matching
+VREF_P = "analog"
+
+"HW_V*" = "straps"         # board-revision / jig-ID straps
+"MOD_IO_*" = "module"      # pass-through header to the module under test
+

@@ -1,0 +1,8 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "Jitter_Footprints") (type "KiCad") (uri "${KIPRJMOD}/../libraries/KicadComponents/Jitter_Footprints.pretty") (options "") (descr ""))
+	(lib (name "Jitter_Logos") (type "KiCad") (uri "${KIPRJMOD}/../libraries/KicadComponents/Jitter_Logos.pretty") (options "") (descr ""))
+	(lib (name "Jitter_Connectors") (type "KiCad") (uri "${KIPRJMOD}/../libraries/KicadComponents/Jitter_Connectors.pretty") (options "") (descr ""))
+	(lib (name "Jitter_Passives") (type "KiCad") (uri "${KIPRJMOD}/../libraries/KicadComponents/Jitter_Passives.pretty") (options "") (descr ""))
+	(lib (name "Jitter_IC") (type "KiCad") (uri "${KIPRJMOD}/../libraries/KicadComponents/Jitter_IC.pretty") (options "") (descr ""))
+)

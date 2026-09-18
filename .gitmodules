@@ -1,0 +1,6 @@
+[submodule "libraries/KicadComponents"]
+	path = libraries/KicadComponents
+	url = https://github.com/JitterCompany/KicadComponents.git
+[submodule "tools/pcb_release"]
+	path = tools/pcb_release
+	url = https://github.com/JitterCompany/pcb_release.git

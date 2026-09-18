@@ -1,0 +1,55 @@
+# KiCad design checks. The jobs live in the shared pcb_release repo, so every board
+# gets the same gates. Tune them there, not here.
+name: CI-hardware
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "master" ]
+    paths:
+      - "**/*.kicad_sch"
+      - "**/*.kicad_pcb"
+      - "**/*.kicad_pro"
+      - "**/release.toml"
+      - "**/pinmap.config.toml"
+      - "tools/**"
+      - "libraries/**"
+      - "**/ci-hardware.yml"
+  pull_request:
+    branches: [ "master" ]
+    paths:
+      - "**/*.kicad_sch"
+      - "**/*.kicad_pcb"
+      - "**/*.kicad_pro"
+      - "**/release.toml"
+      - "**/pinmap.config.toml"
+      - "tools/**"
+      - "libraries/**"
+      - "**/ci-hardware.yml"
+
+# Cancel previous job on new commit for same branch
+concurrency:
+  group: ci-hardware-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  hardware:
+    uses: JitterCompany/pcb_release/.github/workflows/kicad-checks.yml@master
+    with:
+      tools: tools/pcb_release            # the submodule, so its SHA pins the version
+      # The board list. EVERY gate is enforced for every board unless that board
+      # says otherwise, so a new board cannot go silently unchecked and a gate
+      # cannot be forgotten, only exempted on purpose:
+      #   skip=  structurally impossible here (no MCU means no pin map). Silent.
+      #   todo=  applies, not green yet. Warned about every run, does not fail.
+      #
+      # Every board is green on every gate it can be held to, so there is no todo=
+      # left: a regression fails CI rather than being quietly tolerated. The pinmap
+      # gate needs an MCU, and SL23-modem-tester is the only board that has one.
+      project-dirs: |
+        SL23-modem-tester
+        BMP-REDFit-adapter               skip=pinmap
+        HSprobe-REDFit-adapter           skip=pinmap
+        JLink-REDFit-adapter             skip=pinmap
+        JLink-to-TC2030-IDC__microchip   skip=pinmap
+        jtag-swd                         skip=pinmap

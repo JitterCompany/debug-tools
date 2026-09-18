@@ -1,0 +1,45 @@
+# GENERATED -- do not hand-edit. Resolved from the KiCad design + release.toml.
+# Commit this; CI 'release --drift' fails if it stops matching (catches accidental
+# layer-count / assembly-side / via / stackup changes). Comments = source.
+
+[board]
+size_mm          = "120.0 x 107.0"   # Edge.Cuts centerline (.gbrjob bbox - 0.1mm stroke)
+thickness_mm     = 1.6   # .gbrjob -- Board Setup > Physical Stackup
+layer_count      = 4   # .gbrjob LayerNumber -- Board Setup > Physical Stackup
+soldermask_color = "green"   # release.toml [fab] (or .gbrjob MaterialStackup)
+surface_finish   = "any"   # .gbrjob Finish (else release.toml [fab])
+impedance        = "standard"   # release.toml [stackup] spec (standard|impedance|controlled)
+
+[via]
+treatment = "tented both sides"   # .kicad_pcb tenting/plugging/filling -- Board Setup > Solder Mask/Paste
+
+[assembly]
+sides         = ["top"]   # from release.toml assembly.sides (auto->derived from placement)
+smd_top       = 179   # pick&place (--smd-only --exclude-dnp)
+smd_bottom    = 0
+tht_top       = 3   # pick&place (through-hole, --exclude-dnp)
+tht_bottom    = 0
+stencil_sides = ["top"]   # auto: SMD sides being assembled (or stencil.force)
+
+[stackup]
+spec = "standard"   # release.toml -- standard | impedance | controlled
+# layers below: .gbrjob MaterialStackup -- Board Setup > Physical Stackup
+[[stackup.layer]]  # copper
+  n = 1; name = "F.Cu"; copper_um = 35
+[[stackup.layer]]  # copper
+  n = 2; name = "In1.Cu"; copper_um = 35
+[[stackup.layer]]  # copper
+  n = 3; name = "In2.Cu"; copper_um = 35
+[[stackup.layer]]  # copper
+  n = 4; name = "B.Cu"; copper_um = 35
+[[stackup.dielectric]]
+  material = "FR4"; thickness_mm = 0.2; er = None; tan_d = None
+[[stackup.dielectric]]
+  material = "FR4"; thickness_mm = 1.04; er = None; tan_d = None
+[[stackup.dielectric]]
+  material = "FR4"; thickness_mm = 0.2; er = None; tan_d = None
+
+[requirements]
+rohs    = true   # release.toml [requirements]
+ul94_v0 = true   # release.toml [requirements]
+

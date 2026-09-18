@@ -38,3 +38,13 @@ fp-info-cache
 # Exports
 *.zip
 production/
+
+# pcb_release / KiCad CI
+.kicad-3d/
+.ibom/
+release.toml.example
+customer/
+customer*.zip
+production*.zip
+.history/
+*-backups/
