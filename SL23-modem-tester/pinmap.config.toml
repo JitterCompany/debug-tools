@@ -9,9 +9,12 @@
 #     runs on this jig) ----
 #
 # * HSE (Y1, 12 MHz) is DNP, firmware should not enable HSE
-# * USART3 must be configured with the peripheral's SWAP bit set.
-#   Schematic net name 'cellular_uart_rx' means 'rx from the cellular modems perpsective.
-# * FLASH_SS_N (PB0) is a software chip-select driven as GPIO (lib.rs:501), not
+# * USART3 must be configured with the peripheral's SWAP bit set. The schematic net
+#   names are from the MODEM's perspective, so 'cellular_uart_rx' is the pin the MCU
+#   transmits on. Firmware constants name the MCU's direction instead; keep that in
+#   mind when comparing the two.
+# * FLASH_SS_N (PB0) is a software chip-select driven as a plain GPIO output, not
+#   SPI1's hardware NSS, so it is not listed with an SPI1 alternate function.
 
 ref = "U5"                 # the MCU designator: STM32L4R7ZITx, LQFP144
 out = "pinmap.toml"        # generated artifact, written beside this config
@@ -25,9 +28,8 @@ ignore = []                # warning substrings downgraded error->notice. Keep S
 #   "" = reserved for firmware, NO pin may use it
 #   "NET" = only that net may use it (its own I/O pin)
 #
-TIM5 = ""                  # RTIC monotonic (mono.rs:25) -- no pin. Marks the
-                           # TIM5_CHx capabilities on PF6-PF9 (MOD_IO_6..9) '!'
-SPI2 = ""                  # RTIC software-dispatcher vector (factory_test_debug_base.rs:118)
+TIM5 = ""                  # RTIC monotonic
+SPI2 = ""                  # RTIC software-dispatcher vector
 
 [groups]
 # TOML-section grouping for the generated map. FIRST MATCH WINS, so order matters.
