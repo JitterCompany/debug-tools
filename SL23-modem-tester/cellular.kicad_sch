@@ -3366,22 +3366,11 @@
 		(at 92.71 115.57 0)
 		(effects
 			(font
-				(size 0.5 0.5)
+				(size 0.8 0.8)
 			)
 			(justify right bottom)
 		)
 		(uuid "0ceb3be9-54b1-4775-a433-6eeeca46ac8e")
-	)
-	(text "Add additional UART to mini PCIe for GPS use?\n--> Quectel datasheet: Keep all NC, RESERVED and unused pins unconnected.\n--> COEX1 & COEX1 can be used for additional UART, however, it is in 1V8 domain.\n"
-		(exclude_from_sim no)
-		(at 22.86 163.83 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "43ca00c7-0a33-4fc1-a2d4-3be1e0448a20")
 	)
 	(text "On > 0.85V"
 		(exclude_from_sim no)
@@ -3475,30 +3464,6 @@
 			(justify right bottom)
 		)
 		(uuid "d370976d-5a7d-431f-abd7-40b7af523828")
-	)
-	(text "Click to go back to home"
-		(exclude_from_sim no)
-		(at 280.67 22.86 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-				(italic yes)
-			)
-			(justify right bottom)
-			(href "#1")
-		)
-		(uuid "e65289a2-31a2-4495-a658-0b8104998276")
-	)
-	(text "A bypass capacitor (C3) of no less than 470 μF with low ESR should be used"
-		(exclude_from_sim no)
-		(at 24.13 97.79 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "f1327067-08c9-4623-abad-9a73866a0776")
 	)
 	(text "Derating:\n2x64uF @ 3.3V"
 		(exclude_from_sim no)

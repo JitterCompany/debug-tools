@@ -985,17 +985,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "(NOR-flash, 512M-bit, 4Kb Uniform Sector)"
-		(exclude_from_sim no)
-		(at 33.02 20.32 0)
-		(effects
-			(font
-				(size 1.905 1.905)
-			)
-			(justify left bottom)
-		)
-		(uuid "39aac98b-453d-4aeb-b333-504903a0b4f0")
-	)
 	(text "SPI flash"
 		(exclude_from_sim no)
 		(at 17.78 20.32 0)
@@ -1008,17 +997,6 @@
 			(justify left bottom)
 		)
 		(uuid "5920efb0-0533-41ee-96a3-805b375e5f46")
-	)
-	(text "(for prototype 256M-bit version is used!)"
-		(exclude_from_sim no)
-		(at 33.02 24.13 0)
-		(effects
-			(font
-				(size 1.905 1.905)
-			)
-			(justify left bottom)
-		)
-		(uuid "ca817923-9a46-4dd6-a26a-b25d6bb15cd7")
 	)
 	(text "zero ohm\nfor debugging\n(pwr measurement)"
 		(exclude_from_sim no)

@@ -52,8 +52,8 @@
         "zones": {
           "border_display_style": 2,
           "border_hatch_pitch": 0.5,
-          "corner_radius": 0.0,
-          "corner_smoothing": 0,
+          "corner_radius": 0.5,
+          "corner_smoothing": 2,
           "fill_mode": 0,
           "hatch_gap": 1.5,
           "hatch_orientation": 0.0,
@@ -63,10 +63,10 @@
           "min_clearance": 0.2,
           "min_island_area": 10.0,
           "min_thickness": 0.2,
-          "pad_connection": 3,
+          "pad_connection": 2,
           "remove_islands": 0,
-          "thermal_relief_gap": 0.3,
-          "thermal_relief_spoke_width": 0.3
+          "thermal_relief_gap": 0.5,
+          "thermal_relief_spoke_width": 0.5
         }
       },
       "diff_pair_dimensions": [
@@ -98,11 +98,15 @@
           ""
         ],
         [
-          "silk_overlap|160820000|86020000|5f4d48ed-c416-4a30-8080-1af502b1112b|d44642b1-f58b-4684-a7a0-439d2848dccd",
+          "silk_overlap|160820000|111530000|5f4d48ed-c416-4a30-8080-1af502b1112b|d44642b1-f58b-4684-a7a0-439d2848dccd",
           ""
         ],
         [
-          "silk_overlap|161031108|82490168|b25d6b21-8b83-4048-a1e1-90f88a778343|d44642b1-f58b-4684-a7a0-439d2848dccd",
+          "silk_overlap|160820000|137040000|ca84e14c-c795-4581-970b-bd311a68c4a7|d44642b1-f58b-4684-a7a0-439d2848dccd",
+          ""
+        ],
+        [
+          "silk_overlap|160820000|86020000|bbf012e6-9458-405e-8c1d-4c40b7695b0b|d44642b1-f58b-4684-a7a0-439d2848dccd",
           ""
         ],
         [
@@ -110,15 +114,11 @@
           ""
         ],
         [
-          "silk_overlap|162145000|86020000|bbf012e6-9458-405e-8c1d-4c40b7695b0b|d44642b1-f58b-4684-a7a0-439d2848dccd",
+          "silk_overlap|161031108|85579056|b25d6b21-8b83-4048-a1e1-90f88a778343|d44642b1-f58b-4684-a7a0-439d2848dccd",
           ""
         ],
         [
-          "silk_overlap|162453330|85560000|548135af-eb16-42b3-961c-e43a68ca8dae|b25d6b21-8b83-4048-a1e1-90f88a778343",
-          ""
-        ],
-        [
-          "silk_overlap|163468526|137040000|ca84e14c-c795-4581-970b-bd311a68c4a7|d44642b1-f58b-4684-a7a0-439d2848dccd",
+          "silk_overlap|162420000|82490168|548135af-eb16-42b3-961c-e43a68ca8dae|b25d6b21-8b83-4048-a1e1-90f88a778343",
           ""
         ],
         [
@@ -135,6 +135,22 @@
         ],
         [
           "silk_overlap|60760000|142930000|21e1df34-3b44-4fdf-b4a2-d56ca8c17687|df492062-31bd-4942-8f5e-df26fcdf19b1",
+          ""
+        ],
+        [
+          "silk_overlap|74000000|60054000|41cd3de8-ad7b-4462-ace8-35f37cd9e82f|9feead58-1fb7-43d9-b11f-99e7da670405",
+          ""
+        ],
+        [
+          "silk_overlap|80680000|68954000|33072c11-b96b-49d7-a4e5-3047352a68e8|7b3cf7c7-7b83-4710-8029-69286bdb5b4e",
+          ""
+        ],
+        [
+          "silk_overlap|88300000|68954000|6168664a-d9cf-4963-bfc5-956e1f539cd1|69b03630-5f26-4566-a983-e0752c2a325d",
+          ""
+        ],
+        [
+          "silk_overlap|91780000|60054000|9feead58-1fb7-43d9-b11f-99e7da670405|bf7efbf6-2904-4cd0-8411-0eb60e34547c",
           ""
         ]
       ],
@@ -385,6 +401,10 @@
       ],
       [
         "pin_to_pin|1778000|990600|70b8c9b0-5a6b-4c33-9742-1814eb0f5e45|0935fec2-de80-4cd1-8ace-427d54a1a0a3|/ab9ab448-d12b-400b-941c-c6024c31a504/7aa090d7-a5b5-4b71-817c-72c664d3c923|/ab9ab448-d12b-400b-941c-c6024c31a504/7aa090d7-a5b5-4b71-817c-72c664d3c923|/ab9ab448-d12b-400b-941c-c6024c31a504/7aa090d7-a5b5-4b71-817c-72c664d3c923",
+        ""
+      ],
+      [
+        "pin_to_pin|1778000|990600|70b8c9b0-5a6b-4c33-9742-1814eb0f5e45|0935fec2-de80-4cd1-8ace-427d54a1a0a3|||",
         ""
       ],
       [
@@ -914,7 +934,7 @@
         "uuid": "ab9ab448-d12b-400b-941c-c6024c31a504"
       }
     ],
-    "used_designators": "NT1-3,#FLG1-5,#FLG8,R1-38,R40,R43-44,R51-52,R54-59,TP1-12,TP35,TP38,H4,#PWR12-15,#PWR17-43,#PWR45-81,#PWR83-87,#PWR92-93,#PWR111,#PWR130,#PWR136,#PWR142,#PWR144,#PWR156,#PWR159,#PWR183,#PWR187,#PWR197-201,#PWR203,D1-11,C1-56,C74,C78-79,C83,J1,J4,J6,J11,J13,Q1-5,Q7,F1-2,U1-3,L1-4",
+    "used_designators": "L1-4,U1-3,F1-2,Q1-5,Q7,J1,J4,J6,J11,J13,C1-56,C74,C78-79,C83,D1-11,#PWR12-15,#PWR17-43,#PWR45-81,#PWR83-87,#PWR92-93,#PWR111,#PWR130,#PWR136,#PWR142,#PWR144,#PWR156,#PWR159,#PWR183,#PWR187,#PWR197-201,#PWR203,H4,TP1-12,TP35,TP38,R1-38,R40,R43-44,R51-52,R54-59,#FLG1-5,#FLG8,NT1-3",
     "variants": []
   },
   "sheets": [
@@ -948,7 +968,7 @@
     ],
     [
       "b22b370e-e30d-46bd-8b82-50edbcb66f2d",
-      "Sensor Module"
+      "SL23 Sensor Module"
     ],
     [
       "13c7682d-e2ff-4bdc-aff1-175d65e2f4ac",
