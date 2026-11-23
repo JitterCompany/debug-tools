@@ -5,7 +5,7 @@
 	(uuid "885d1508-f385-4e19-bb92-468a901fec88")
 	(paper "A3")
 	(title_block
-		(title "4108 Platform Base")
+		(title "MCU")
 		(date "2026-08-24")
 		(rev "1")
 	)

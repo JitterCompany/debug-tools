@@ -4780,12 +4780,6 @@
 			(uuid "d02eaeb0-9154-4d20-aea1-f640e1d4c13f")
 		)
 		(instances
-			(project "2503-debug"
-				(path "/7b78fed2-0498-4bc0-aecf-03e7b067e50a"
-					(reference "R1")
-					(unit 1)
-				)
-			)
 			(project "JLink-REDFit-adapter"
 				(path "/e25ce415-914a-48fe-bf09-324317917b2e"
 					(reference "R1")
